@@ -32,6 +32,8 @@ public class Client
 
         fixedThreadPool.invokeAll(urls);
 
+        // NOTE : same as the above redundant code
+
         fixedThreadPool.shutdown();
         long end = System.currentTimeMillis();
         System.out.println("Time taken for fixedThreadPool: " + (end - start));
