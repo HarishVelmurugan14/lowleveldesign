@@ -19,7 +19,7 @@ public class AdditionMultiThread implements Callable<Long>
     @Override
     public Long call() throws Exception
     {
-        Long result = 0L;
+        Long result = (Long) 0L;
         for (int i = startIndex; i < endIndex; i++)
         {
             result += this.integerList.get(i);
