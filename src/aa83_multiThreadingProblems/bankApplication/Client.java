@@ -1,4 +1,4 @@
-package multiThreadingProblems.bankApplication;
+package aa83_multiThreadingProblems.bankApplication;
 
 public class Client
 {

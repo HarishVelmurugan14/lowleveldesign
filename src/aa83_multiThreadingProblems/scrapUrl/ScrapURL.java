@@ -1,4 +1,4 @@
-package multiThreadingProblems.scrapUrl;
+package aa83_multiThreadingProblems.scrapUrl;
 
 import java.util.concurrent.Callable;
 

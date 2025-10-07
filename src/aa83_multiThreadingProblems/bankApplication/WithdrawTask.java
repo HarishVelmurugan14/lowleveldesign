@@ -1,10 +1,10 @@
-package multiThreadingProblems.bankApplication;
+package aa83_multiThreadingProblems.bankApplication;
 
-public class DepositTask implements Runnable
+public class WithdrawTask implements Runnable
 {
     private BankAccount account;
 
-    public DepositTask(BankAccount account)
+    public WithdrawTask(BankAccount account)
     {
         this.account = account;
     }
@@ -14,7 +14,7 @@ public class DepositTask implements Runnable
     {
         for (int i = 0; i < 10000; i++)
         {
-            account.deposit(i);
+            account.withdraw(i);
         }
     }
 }
