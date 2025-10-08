@@ -1,4 +1,4 @@
-package Generics;
+package aa84_Generics;
 
 public class GenericPair <T, K>
 {
