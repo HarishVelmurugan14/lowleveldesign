@@ -1,4 +1,4 @@
-package lambdasAndStreams;
+package aa86_lambdasAndStreams;
 
 public class SomeTask implements Runnable
 {

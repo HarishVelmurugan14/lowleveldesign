@@ -1,4 +1,4 @@
-package lambdasAndStreams;
+package aa86_lambdasAndStreams;
 
 import java.util.ArrayList;
 import java.util.List;
