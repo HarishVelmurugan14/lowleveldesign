@@ -13,6 +13,8 @@ public class Client
         Thread t1 = new Thread(someTask);
         t1.start();
 
+        // Works only on Functional Interface
+        // Functional Interface : has only one abstract method
         Runnable anotherTask = () -> {
             System.out.println("Another task");
         };
@@ -34,6 +36,8 @@ public class Client
 //        System.out.println(integerList);
 
         //Method 2
+        // Kind of anonymous class but not exactly but serves similar purpose
+        // If it is not there then a new comparator class need to be initialized
         Collections.sort(integerList, (o1, o2) -> {
             if(o1 % 2 == 0)
             {

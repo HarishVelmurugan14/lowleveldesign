@@ -19,13 +19,15 @@ public class StreamsClient
                 evenList.add(i);
         }
 
-        Stream<Integer> stream = list.stream();
+        Stream<Integer> stream = list.stream(); // NOTE : ATTACH
+        // after attaching stream while filtering it needs a predicate class object instead we planned to give lambda expression
+        // where param is the single entity of the stream
         Stream<Integer> stream1 = stream.filter((i) -> {
             if(i % 2 == 0) return true;
             return false;
-        });
+        }); // NOTE : MANIPULATE
 
-        List<Integer> evenIntegerList = stream1.collect(Collectors.toList());
+        List<Integer> evenIntegerList = stream1.collect(Collectors.toList()); // NOTE : COLLECT
         System.out.println(evenIntegerList);
 
         //filter
