@@ -1,4 +1,4 @@
-package inventoryManagementSystem;
+package aa85_inventoryManagementSystem;
 
 import java.util.Comparator;
 

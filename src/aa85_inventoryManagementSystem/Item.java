@@ -1,7 +1,4 @@
-package inventoryManagementSystem;
-
-import java.util.ArrayList;
-import java.util.List;
+package aa85_inventoryManagementSystem;
 
 public class Item implements Comparable<Item>
 {
@@ -57,11 +54,13 @@ public class Item implements Comparable<Item>
     public int compareTo(Item o)
     {
         /*
+        * why one item ? one item is this only thing to compare is given
         * "this" -> current item win => return -1
         * other -> other item win => return 1
         * */
         if(this.quantity > o.quantity)
         {
+            // Since ascending sort o.quantity is less and it is winning : Other is winning
             return 1;
         }
 

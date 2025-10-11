@@ -1,4 +1,4 @@
-package inventoryManagementSystem;
+package aa85_inventoryManagementSystem;
 
 public class Electronics extends Item
 {

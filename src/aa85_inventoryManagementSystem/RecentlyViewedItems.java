@@ -1,7 +1,6 @@
-package inventoryManagementSystem;
+package aa85_inventoryManagementSystem;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class RecentlyViewedItems
 {

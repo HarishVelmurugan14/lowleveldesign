@@ -1,12 +1,14 @@
-package inventoryManagementSystem;
+package aa85_inventoryManagementSystem;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Client {
     public static void main(String[] args) {
+
+//        https://docs.google.com/document/d/1Gn-LCIgwRKbSYHXoEDS5L_bsfpEPSgcufqM2YUrzp38/edit?tab=t.0#heading=h.zgnpy4ah7iug
+
         List<Item> items = new ArrayList<Item>();
 
         items.add(new Electronics("E1", "Laptop", 5 , 999.99, 24));
@@ -19,6 +21,10 @@ public class Client {
         }
 
         Collections.sort(items);
+        // Why does items given to Collection ? items (arraylist) is a sub type of collection
+        // Since Item is custom class we need to implement our own comparable on how to compare
+
+
         System.out.println("Sorted items List based on quantity: ");
         for (Item item : items) {
             System.out.println(item.getName() + ": " + item.getPrice());
