@@ -1,4 +1,11 @@
-package aa90_DesignPatterns.PrototypeAndRegistry;
+package aa90_DesignPatterns.aa93_PrototypeAndRegistry;
+
+import aa90_DesignPatterns.aa93_PrototypeAndRegistry.prototype.IntelligentStudent;
+import aa90_DesignPatterns.aa93_PrototypeAndRegistry.prototype.Student;
+import aa90_DesignPatterns.aa93_PrototypeAndRegistry.prototype.StudentUtil;
+import aa90_DesignPatterns.aa93_PrototypeAndRegistry.registry.Human;
+import aa90_DesignPatterns.aa93_PrototypeAndRegistry.registry.HumanRegistry;
+import aa90_DesignPatterns.aa93_PrototypeAndRegistry.registry.RaceType;
 
 public class Client
 {

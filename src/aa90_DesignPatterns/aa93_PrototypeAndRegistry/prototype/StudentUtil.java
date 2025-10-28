@@ -1,4 +1,4 @@
-package aa90_DesignPatterns.PrototypeAndRegistry;
+package aa90_DesignPatterns.aa93_PrototypeAndRegistry.prototype;
 
 public class StudentUtil
 {

@@ -1,4 +1,6 @@
-package aa90_DesignPatterns.PrototypeAndRegistry;
+package aa90_DesignPatterns.aa93_PrototypeAndRegistry.registry;
+
+import aa90_DesignPatterns.aa93_PrototypeAndRegistry.Prototype;
 
 public class Human implements Prototype<Human>
 {
