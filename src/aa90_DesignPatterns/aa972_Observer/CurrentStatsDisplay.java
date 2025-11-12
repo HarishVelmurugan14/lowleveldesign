@@ -30,6 +30,7 @@ public class CurrentStatsDisplay implements Observer, Display
 
     public void registerWithSubject()
     {
+        // Power is taken by observer instead of subject
         subject.registerObserver(this);
     }
 }
