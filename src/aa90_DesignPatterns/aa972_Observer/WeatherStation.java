@@ -1,4 +1,4 @@
-package aa90_DesignPatterns.Observer;
+package aa90_DesignPatterns.aa972_Observer;
 
 public class WeatherStation
 {

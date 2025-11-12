@@ -1,6 +1,6 @@
-package aa90_DesignPatterns.Decorator.AddOn;
+package aa90_DesignPatterns.aa971_Decorator.AddOn;
 
-import aa90_DesignPatterns.Decorator.Beverage.Beverage;
+import aa90_DesignPatterns.aa971_Decorator.Beverage.Beverage;
 
 public abstract class AddOn extends Beverage
 {

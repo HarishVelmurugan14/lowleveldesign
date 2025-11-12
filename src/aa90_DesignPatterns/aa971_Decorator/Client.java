@@ -1,12 +1,12 @@
-package aa90_DesignPatterns.Decorator;
+package aa90_DesignPatterns.aa971_Decorator;
 
-import aa90_DesignPatterns.Decorator.AddOn.ChocoChip;
-import aa90_DesignPatterns.Decorator.AddOn.Mocha;
-import aa90_DesignPatterns.Decorator.AddOn.Soy;
-import aa90_DesignPatterns.Decorator.AddOn.Whip;
-import aa90_DesignPatterns.Decorator.Beverage.Beverage;
-import aa90_DesignPatterns.Decorator.Beverage.DarkRoast;
-import aa90_DesignPatterns.Decorator.Beverage.Decaf;
+import aa90_DesignPatterns.aa971_Decorator.AddOn.ChocoChip;
+import aa90_DesignPatterns.aa971_Decorator.AddOn.Mocha;
+import aa90_DesignPatterns.aa971_Decorator.AddOn.Soy;
+import aa90_DesignPatterns.aa971_Decorator.AddOn.Whip;
+import aa90_DesignPatterns.aa971_Decorator.Beverage.Beverage;
+import aa90_DesignPatterns.aa971_Decorator.Beverage.DarkRoast;
+import aa90_DesignPatterns.aa971_Decorator.Beverage.Decaf;
 
 public class Client
 {

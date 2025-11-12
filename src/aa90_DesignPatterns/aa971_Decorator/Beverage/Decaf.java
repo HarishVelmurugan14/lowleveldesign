@@ -1,4 +1,4 @@
-package aa90_DesignPatterns.Decorator.Beverage;
+package aa90_DesignPatterns.aa971_Decorator.Beverage;
 
 public class Decaf extends Beverage {
     @Override
