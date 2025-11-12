@@ -1,4 +1,4 @@
-package aa90_DesignPatterns.Strategy;
+package aa90_DesignPatterns.aa971_Strategy;
 
 public class GoogleStrategy implements LoginStrategy{
     @Override

@@ -1,4 +1,4 @@
-package aa90_DesignPatterns.aa971_Decorator.Beverage;
+package aa90_DesignPatterns.aa96_Decorator.Beverage;
 
 public class HouseBlend extends Beverage {
     @Override
