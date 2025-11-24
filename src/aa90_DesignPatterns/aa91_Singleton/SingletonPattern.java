@@ -2,23 +2,35 @@ package aa90_DesignPatterns.aa91_Singleton;
 
 public class SingletonPattern {
 
+    public static void purposeAndSolution() {
+//       Need: Ensure only one instance of a class exists (e.g., shared resource, config, manager).
+//       How it solves: Restricts object creation and provides a single global access point.
+//       Example:
+//        Database connection manager — you don’t want 50 DB connections created unnecessarily; one shared instance handles all queries
+//        Inventory in e-Commerce : Every order, return, warehouse update talks to the same inventory instance so stock levels stay consistent.
+    }
+
+
     public static void main() {
-    SingletonPattern sp = new SingletonPattern();
 
-    sp.SingleThreadSingletonPattern(); // Good but only used for single threaded problems
+        purposeAndSolution();
 
-    sp.InEfficient(); // Thread safe but not efficient | do not use
+        SingletonPattern sp = new SingletonPattern();
 
-    sp.BasicEagerApproach(); // Thread safe with good efficiency || Good for web application with few cons
-    sp.LazyApproach(); // Thread safe good eff || double checking singleton pattern
-    sp.StaticHolderSingleton(); // Avoids variable load on class startup
+        sp.SingleThreadSingletonPattern(); // Good but only used for single threaded problems
 
-    sp.EnumSingleton(); // Best possible singleton approach
+        sp.InEfficient(); // Thread safe but not efficient | do not use
+
+        sp.BasicEagerApproach(); // Thread safe with good efficiency || Good for web application with few cons
+        sp.LazyApproach(); // Thread safe good eff || double checking singleton pattern
+        sp.StaticHolderSingleton(); // Avoids variable load on class startup
+
+        sp.EnumSingleton(); // Best possible singleton approach
 
     }
 
 
-    private void SingleThreadSingletonPattern(){
+    private void SingleThreadSingletonPattern() {
         DBConnectionPool1_STSP instance = DBConnectionPool1_STSP.getInstance();
         instance.doSomething();
         // NOTE : This is implementable for single thread
@@ -51,7 +63,7 @@ public class SingletonPattern {
         // Exception cause application crash
     }
 
-    private void LazyApproach(){
+    private void LazyApproach() {
         DBConnectionPool4_MT_LAZY_SP instance = DBConnectionPool4_MT_LAZY_SP.getInstance();
         instance.doSomething();
         instance.markedAsVolatile();
@@ -69,7 +81,7 @@ public class SingletonPattern {
     }
 
 
-    private void EnumSingleton(){
+    private void EnumSingleton() {
         // Best possible singleton approach
     }
 }
