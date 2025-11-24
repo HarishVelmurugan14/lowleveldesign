@@ -2,6 +2,19 @@ package aa90_DesignPatterns.aa92_Builder.v3;
 
 
 public class V3_Client {
+
+    static void purposeAndSolution(){
+//        Builder Pattern
+//        ---------------
+//        Need: Create complex objects step-by-step without using long, messy constructors.
+//        How it solves: Separates the object construction process from the final object, allowing clean and flexible building.
+//
+//                Business Examples:
+//        1. Loan Application Builder – Fill customer info, KYC, income, and loan terms step-by-step.
+//        2. Travel Booking Builder – Combine flights, hotels, add-ons, and insurance gradually.
+//        3. Insurance Policy Builder – Add base plan, riders, coverage, and nominee info before finalizing.
+    }
+
     public static void main(String[] args) {
         // Way 1: Parameters inside a constructor
         // Way 2: Using Setters

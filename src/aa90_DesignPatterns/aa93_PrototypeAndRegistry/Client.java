@@ -8,6 +8,30 @@ import aa90_DesignPatterns.aa93_PrototypeAndRegistry.registry.HumanRegistry;
 import aa90_DesignPatterns.aa93_PrototypeAndRegistry.registry.RaceType;
 
 public class Client {
+
+    static void purpose(){
+//        Prototype Pattern
+//        -----------------
+//        Need: Create new objects by copying an existing object instead of building from scratch.
+//        runtime polymorphism can be solved easily by overriding copy and calling copy constructor
+//        How it solves: Uses cloning to quickly produce similar objects with small variations.
+//
+//        Business Examples:
+//        1. Invoice Template Prototype – Copy an existing invoice format and adjust details.
+//        2. Product Catalog Item Prototype – Duplicate a product entry and modify only price or stock.
+//        3. User Profile Prototype – Clone a default user profile setup and update specific fields.
+
+//        Registry Pattern
+//        ----------------
+//        Need: Keep a central place to store and retrieve shared objects by name/key.
+//        How it solves: Maintains a global lookup table so objects/services can be accessed anywhere without recreating them.
+//
+//        Business Examples:
+//        1. Global Feature Toggle Registry – Fetch feature flags (ON/OFF) from one central place.
+//        2. Tax Rule Registry – Retrieve region-specific tax rules used across billing modules.
+//        3. Notification Channel Registry – Get SMS/Email/Push channel handlers from one shared registry.
+    }
+
     public static void main(String[] args) {
 
         //----------------------------------------------------------------------------------------
