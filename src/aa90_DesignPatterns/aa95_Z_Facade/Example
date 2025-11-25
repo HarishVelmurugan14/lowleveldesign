@@ -1,0 +1,43 @@
+Facade Pattern - Simple Example
+-------------------------------
+
+# Complex subsystem classes
+class InventoryService {
+    void checkStock() {
+        System.out.println("Stock checked");
+    }
+}
+
+class PaymentService {
+    void processPayment() {
+        System.out.println("Payment processed");
+    }
+}
+
+class ShippingService {
+    void shipProduct() {
+        System.out.println("Product shipped");
+    }
+}
+
+# Facade: gives ONE simple method
+class OrderFacade {
+    private InventoryService inventory = new InventoryService();
+    private PaymentService payment = new PaymentService();
+    private ShippingService shipping = new ShippingService();
+
+    void placeOrder() {
+        inventory.checkStock();
+        payment.processPayment();
+        shipping.shipProduct();
+        System.out.println("Order placed successfully!");
+    }
+}
+
+# Usage
+public class Main {
+    public static void main(String[] args) {
+        OrderFacade facade = new OrderFacade();
+        facade.placeOrder();   // user calls only ONE method
+    }
+}
