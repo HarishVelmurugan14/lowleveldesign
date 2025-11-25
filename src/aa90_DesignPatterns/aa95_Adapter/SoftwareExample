@@ -1,0 +1,43 @@
+Adapter Pattern - Simple Software Example
+-----------------------------------------
+
+# Your code expects JSON
+interface JsonDataReader {
+    String getJson();
+}
+
+# Third-party library gives XML (not JSON)
+class XmlLib {
+    String getXml() {
+        return "<data><name>HK</name></data>";
+    }
+}
+
+# Adapter: converts XML → JSON so your code can use it
+class XmlToJsonAdapter implements JsonDataReader {
+    private XmlLib xmlLib;
+
+    XmlToJsonAdapter(XmlLib xmlLib) {
+        this.xmlLib = xmlLib;
+    }
+
+    public String getJson() {
+        String xml = xmlLib.getXml();
+        return convertXmlToJson(xml);  // pretend conversion logic
+    }
+
+    private String convertXmlToJson(String xml) {
+        return "{ \"name\": \"HK\" }";
+    }
+}
+
+# Usage
+public class Main {
+    public static void main(String[] args) {
+        XmlLib xmlLib = new XmlLib();
+
+        JsonDataReader jsonReader = new XmlToJsonAdapter(xmlLib);
+
+        System.out.println(jsonReader.getJson());
+    }
+}

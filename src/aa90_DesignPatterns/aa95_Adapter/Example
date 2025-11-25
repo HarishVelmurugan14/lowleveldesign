@@ -1,0 +1,34 @@
+# Wall socket expects 2-pin plug
+interface TwoPinSocket {
+    void plugIn();
+}
+
+# Your appliance has a 3-pin plug (not compatible)
+class ThreePinPlug {
+    void connect3Pin() {
+        System.out.println("3-pin plug connected");
+    }
+}
+
+# Adapter converts 3-pin to 2-pin
+class ThreePinToTwoPinAdapter implements TwoPinSocket {
+    private ThreePinPlug plug;
+
+    ThreePinToTwoPinAdapter(ThreePinPlug plug) {
+        this.plug = plug;
+    }
+
+    public void plugIn() {
+        plug.connect3Pin(); // adapter makes it work
+    }
+}
+
+# Usage
+public class Main {
+    public static void main(String[] args) {
+        ThreePinPlug plug = new ThreePinPlug();
+        TwoPinSocket socket = new ThreePinToTwoPinAdapter(plug);
+
+        socket.plugIn();  // Works even though plug is 3-pin!
+    }
+}
