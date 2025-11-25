@@ -1,0 +1,97 @@
+DESIGN PATTERN EVOLUTION: SIMPLE FACTORY → FACTORY METHOD → ABSTRACT FACTORY
+
+SCENARIO:
+We build UI components for different OS: Windows and Mac.
+First only Button. Later also Checkbox.
+
+-------------------------
+1) SIMPLE FACTORY
+-------------------------
+class SimpleUIFactory {
+    static Button createButton(String os) {
+        if(os.equals("Windows")) return new WinButton();
+        if(os.equals("Mac")) return new MacButton();
+        return null;
+    }
+}
+
+Problem:
+- Big if/else grows.
+- Violates Open/Closed.
+- Hard to extend.
+Reason to move on:
+We need extensibility without editing the central factory every time.
+
+-------------------------
+2) FACTORY METHOD
+-------------------------
+abstract class Dialog {
+    abstract Button createButton();
+}
+
+class WindowsDialog extends Dialog {
+    Button createButton() { return new WinButton(); }
+}
+
+class MacDialog extends Dialog {
+    Button createButton() { return new MacButton(); }
+}
+
+Advantages:
+- No if/else.
+- Each OS has dedicated subclass.
+
+Problem:
+- Only ONE product type created cleanly (only Button).
+- If we add Checkbox → need separate CheckboxCreator.
+- ButtonCreator and CheckboxCreator cannot ensure both belong to same OS.
+- Can mix WinButton + MacCheckbox accidentally.
+- Factory Method’s principle:
+
+“One creator class creates one kind of product.”
+
+Reason to move on:
+We need MULTIPLE related products guaranteed to be from same family.
+
+-------------------------
+3) ABSTRACT FACTORY
+-------------------------
+interface UIFactory {
+    Button createButton();
+    CheckBox createCheckBox();
+}
+
+class WindowsFactory implements UIFactory {
+    public Button createButton() { return new WinButton(); }
+    public CheckBox createCheckBox() { return new WinCheckbox(); }
+}
+
+class MacFactory implements UIFactory {
+    public Button createButton() { return new MacButton(); }
+    public CheckBox createCheckBox() { return new MacCheckbox(); }
+}
+
+Advantages:
+- Creates multiple related products (Button + Checkbox).
+- Guarantees same family (Windows or Mac).
+- Easy to switch family at runtime.
+- Add new OS by adding new factory class only.
+
+-------------------------
+KEY DIFFERENCES
+-------------------------
+Simple Factory:
+Centralized if/else. Not extensible.
+
+Factory Method:
+One creator = one product type. Cannot ensure product families match.
+
+Abstract Factory:
+One factory = multiple related products. Ensures family consistency.
+
+-------------------------
+INTERVIEW SUMMARY
+-------------------------
+Simple Factory centralizes object creation but is not extensible.
+Factory Method delegates creation but handles only one product type.
+Abstract Factory creates a whole family of related products and guarantees consistency.

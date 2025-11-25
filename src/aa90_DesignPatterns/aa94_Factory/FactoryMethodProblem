@@ -1,0 +1,94 @@
+FACTORY METHOD WITH TWO PRODUCTS (Button + Checkbox)
+
+Goal:
+Try to create Button and Checkbox using Factory Method pattern.
+Factory Method works, but only by creating TWO separate creator classes.
+This clearly shows the limitation.
+
+--------------------------------------------------
+1) PRODUCT INTERFACES
+--------------------------------------------------
+interface Button {}
+interface CheckBox {}
+
+--------------------------------------------------
+2) CONCRETE PRODUCTS
+--------------------------------------------------
+class WinButton implements Button {}
+class MacButton implements Button {}
+
+class WinCheckBox implements CheckBox {}
+class MacCheckBox implements CheckBox {}
+
+--------------------------------------------------
+3) FACTORY METHOD FOR BUTTON (Creator 1)
+--------------------------------------------------
+abstract class ButtonCreator {
+    abstract Button createButton();
+}
+
+class WindowsButtonCreator extends ButtonCreator {
+    Button createButton() { return new WinButton(); }
+}
+
+class MacButtonCreator extends ButtonCreator {
+    Button createButton() { return new MacButton(); }
+}
+
+--------------------------------------------------
+4) FACTORY METHOD FOR CHECKBOX (Creator 2)
+--------------------------------------------------
+abstract class CheckBoxCreator {
+    abstract CheckBox createCheckBox();
+}
+
+class WindowsCheckBoxCreator extends CheckBoxCreator {
+    CheckBox createCheckBox() { return new WinCheckBox(); }
+}
+
+class MacCheckBoxCreator extends CheckBoxCreator {
+    CheckBox createCheckBox() { return new MacCheckBox(); }
+}
+
+--------------------------------------------------
+5) PROBLEM DEMONSTRATION
+--------------------------------------------------
+To create a Windows UI:
+You must manually ensure both creators match Windows.
+
+ButtonCreator b = new WindowsButtonCreator();
+CheckBoxCreator c = new WindowsCheckBoxCreator();
+
+Button btn = b.createButton();
+CheckBox cb = c.createCheckBox();
+
+It works but…
+
+Problem:
+Nothing prevents this mistake:
+
+ButtonCreator b = new WindowsButtonCreator();
+CheckBoxCreator c = new MacCheckBoxCreator();   // wrong!
+
+This creates:
+WinButton + MacCheckBox = inconsistent UI
+
+Factory Method cannot prevent this mismatch because:
+- Each product has its own separate creator hierarchy.
+- No mechanism ties product families together.
+
+--------------------------------------------------
+WHY THIS IS A LIMITATION
+--------------------------------------------------
+Factory Method = One creator produces ONE product type.
+For 2 products → need 2 creator classes.
+For 5 products → need 5 creator classes.
+
+Nothing ensures all creators belong to the same OS family.
+
+--------------------------------------------------
+CONCLUSION
+--------------------------------------------------
+Factory Method can create multiple products ONLY by creating multiple creator classes.
+It cannot guarantee that Button and Checkbox belong to the same family.
+This is exactly why Abstract Factory exists.

@@ -44,6 +44,12 @@ public class Client {
         Dropdown dropdown = PlatformFactory.createDropdown(platform);
         button.click();
         dropdown.showOptions();
+//        Problem:
+//        Every time you add a new OS, you must modify this class → violates OCP.
+//        All logic sits in one big if/else, messy.
+//        No flexibility/overriding.
+//        Reason to move to Factory Method:
+//        We need extensibility without editing the central factory every time.
     }
 
     private static void factoryMethod() {
