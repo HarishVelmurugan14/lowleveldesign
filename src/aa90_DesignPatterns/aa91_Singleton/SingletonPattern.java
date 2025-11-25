@@ -3,6 +3,11 @@ package aa90_DesignPatterns.aa91_Singleton;
 public class SingletonPattern {
 
     public static void purposeAndSolution() {
+
+//        1. Creational Patterns
+//        - Deal with object creation mechanisms.
+//        - Examples: Singleton, Builder, Prototype, Factory Method, Abstract Factory.
+
 //       Need: Ensure only one instance of a class exists (e.g., shared resource, config, manager).
 //       How it solves: Restricts object creation and provides a single global access point.
 //       Example:
