@@ -1,0 +1,190 @@
+-------------------------------------------------------------------------------------------------------------------------
+//        Creational Design Patterns
+//        --------------------------
+//        Need: Control how objects are created so the system becomes flexible,
+//              memory-efficient, and easy to extend.
+//        How they solve: Provide different strategies to create objects without
+//                        tightly coupling code to specific classes.
+
+//        Patterns:
+//        1. Singleton – Ensure only *one* instance exists (e.g., Logger, DB manager).
+//        2. Factory Method – Let subclasses decide which object to create.
+//        3. Abstract Factory – Produce families of related objects (UI kits, themes).
+//        4. Builder – Build complex objects step-by-step (cars, houses, JSON payloads).
+//        5. Prototype – Clone existing objects instead of creating from scratch.
+//        6. Object Pool – Reuse expensive objects instead of recreating them (DB connections).
+
+-------------------------------------------------------------------------------------------------------------------------
+
+//        Singleton Pattern
+//        -----------------
+//        Need: Ensure only one instance of a class exists and is shared across the system.
+//        How it solves: Makes constructor private, creates one static instance, and
+//                       provides a global access method (getInstance()).
+//
+//        Business Examples:
+//        1. Database Connection Manager – Prevents multiple unnecessary DB connections;
+//           all queries use the same shared instance.
+//        2. Inventory Service in e-Commerce – All orders, returns, and warehouse updates
+//           use a single inventory instance to keep stock levels consistent.
+//        3. Logger Service – Every part of the application logs through one shared logger
+//           to maintain a proper, ordered log file.
+
+//        Builder Pattern
+//        ---------------
+//        Need: Create complex objects step-by-step without using long, messy constructors.
+//        How it solves: Separates the object construction process from the final object, allowing clean and flexible building.
+//
+//        Business Examples:
+//        1. Loan Application Builder – Fill customer info, KYC, income, and loan terms step-by-step.
+//        2. Travel Booking Builder – Combine flights, hotels, add-ons, and insurance gradually.
+//        3. Insurance Policy Builder – Add base plan, riders, coverage, and nominee info before finalizing.
+
+//        Prototype Pattern
+//        -----------------
+//        Need: Create new objects quickly by copying existing ones instead of
+//              building them from scratch (especially when creation is costly).
+//        How it solves: Provides a clone() method that returns a duplicate of an
+//                       existing object, including complex internal state.
+//
+//        Business Examples:
+//        1. Document Templates – Create new invoices, reports, contracts by cloning
+//           a pre-filled template object.
+//        2. Game Characters/Weapons – Duplicate enemies or items with the same
+//           base stats, then tweak only a few properties.
+//        3. UI Component Duplication – Clone pre-styled buttons/cards instead of
+//           reconstructing styling and layout every time.
+
+//        Registry Pattern
+//        -----------------
+//        Need: Centrally store and retrieve objects (often prototypes or services)
+//              using a key, instead of creating or locating them repeatedly.
+//        How it solves: Maintains a global map/dictionary of objects so clients
+//                       can access them by name/ID without knowing creation logic.
+//
+//        Business Examples:
+//        1. Prototype Registry – Store preconfigured object templates (invoice, user,
+//           product) and clone them on demand.
+//        2. Service Registry – Central place to fetch services like PaymentService,
+//           NotificationService, AuthService in large applications.
+//        3. Config/Feature Registry – Maintain all feature toggles or environment
+//           configs in one accessible global registry.
+
+-------------------------------------------------------------------------------------------------------------------------
+//        Structural Design Patterns
+//        --------------------------
+//        Need: Organize classes/objects into flexible structures, making complex
+//              systems easier to maintain, extend, and integrate.
+//        How they solve: Provide ways to combine objects, simplify interactions,
+//                        and adapt incompatible interfaces.
+
+//        Patterns:
+//        1. Adapter – Make incompatible interfaces work together.
+//        2. Facade – Provide a simple interface over a complex subsystem.
+//        3. Decorator – Add features to objects dynamically without modifying them.
+//        4. Composite – Treat individual objects and groups uniformly (tree structures).
+//        5. Proxy – Control access to an object (lazy load, security, caching).
+//        6. Bridge – Separate abstraction from implementation so both can vary independently.
+//        7. Flyweight – Share common object data to reduce memory usage.
+-------------------------------------------------------------------------------------------------------------------------
+
+//        Adapter Pattern
+//        ---------------
+//        Need: Make two incompatible interfaces work together.
+//        How it solves: Wraps one interface with another so existing code can use it without changes.
+//
+//        Business Examples:
+//        1. Payment Adapter – Convert your app’s payment format to Razorpay/Stripe’s expected format.
+//        2. Shipping Provider Adapter – Standardize APIs of FedEx, Delhivery, DTDC under one interface.
+//        3. Legacy System Adapter – Wrap old ERP responses to match your modern app’s data model.
+
+//        Facade Pattern
+//        ---------------
+//        Need: Provide a simple, unified interface to a complex system.
+//        How it solves: Creates one high-level method that internally calls multiple
+//                       complicated subsystems, hiding all complexity from the client.
+//
+//        Business Examples:
+//        1. Booking Facade – One method to book flight + hotel + cab behind the scenes.
+//        2. Ecommerce Facade – Single checkout() that handles auth, payment, inventory, invoice, emails.
+//        3. Media Processing Facade – One convertVideo() that internally does decoding,
+//                                    compression, thumbnailing, and uploading.
+
+//        Decorator Pattern
+//        -----------------
+//        Need: Add features/behaviors to an object dynamically **without**
+//              modifying its original class.
+//        How it solves: Wraps the original object with decorator classes that
+//                       add extra functionality while keeping the same interface.
+//
+//        Business Examples:
+//        1. Coffee Billing (e.g., Starbucks) – Base Coffee + add-ons like
+//           Milk, Caramel, Whipped Cream as decorators.
+//        2. File I/O Streams – Add buffering, compression, encryption layers
+//           around a basic file stream.
+//        3. Notification System – Base notification → add SMS decorator → add
+//           Email decorator → add WhatsApp decorator dynamically.
+
+//        Flyweight Pattern
+//        ------------------
+//        Need: Handle a huge number of similar objects without wasting memory.
+//        How it solves: Shares common (intrinsic) data between objects, and stores
+//                       only unique (extrinsic) data separately at runtime.
+//
+//        Business Examples:
+//        1. Game Objects – Bullets, trees, particles share common data (model, color)
+//           while position/speed vary per object.
+//        2. Text Editor – Characters share font/style info; only position changes.
+//        3. Map/GIS Icons – Same icon graphics reused for thousands of markers,
+//           only coordinates differ.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+//        Behavioral Design Patterns
+//        --------------------------
+//        Need: Manage how objects communicate, behave, and share responsibilities
+//              without tightly coupling them.
+//        How they solve: Define clear communication rules, responsibility flow,
+//                        and behavior encapsulation between objects.
+
+//        Patterns:
+//        1. Strategy – Swap algorithms dynamically (sorting, billing, compression).
+//        2. Observer – Notify multiple listeners when something changes (events).
+//        3. Command – Encapsulate actions as objects (undo/redo, queues).
+//        4. Chain of Responsibility – Pass a request through handlers until one handles it.
+//        5. State – Change object behavior when its internal state changes (ATMs, media players).
+//        6. Template Method – Define skeleton of an algorithm; subclasses fill steps.
+//        7. Iterator – Traverse a collection without exposing its structure.
+//        8. Mediator – Centralize communication between objects (chatroom, UI controls).
+//        9. Memento – Save and restore object state (undo feature).
+//        10. Visitor – Add new operations to objects without modifying them.
+-------------------------------------------------------------------------------------------------------------------------
+
+//        Strategy Pattern
+//        -----------------
+//        Need: Switch between different algorithms/behaviors at runtime without
+//              modifying the core business logic.
+//        How it solves: Defines a family of algorithms and lets you choose any
+//                       implementation through a common interface.
+//
+//        Business Examples:
+//        1. Payment Calculation – Different tax or discount strategies
+//           (NormalBilling, FestivalDiscount, MemberPricing).
+//        2. Sorting Algorithms – Choose QuickSort, MergeSort, or HeapSort based
+//           on data size or performance need.
+//        3. Travel/Navigation Apps – Route selection via FastestRoute,
+//           CheapestRoute, or ScenicRoute strategies.
+
+//        Observer Pattern
+//        -----------------
+//        Need: Notify multiple components automatically when some data/state changes.
+//        How it solves: A subject maintains a list of observers and updates all of
+//                       them whenever a change occurs (publish–subscribe model).
+//
+//        Business Examples:
+//        1. Stock Price Updates – When a stock price changes, all subscribed
+//           apps/widgets get notified instantly.
+//        2. Notification System – Order placed → notify SMS, Email, WhatsApp
+//           observers automatically.
+//        3. UI Frameworks – Changing data in ViewModel automatically updates
+//           all bound UI elements (React, Angular, Flutter).
