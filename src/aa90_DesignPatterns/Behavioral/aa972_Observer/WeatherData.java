@@ -1,4 +1,4 @@
-package aa90_DesignPatterns.aa972_Observer;
+package aa90_DesignPatterns.Behavioral.aa972_Observer;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package aa90_DesignPatterns.aa971_Strategy;
+package aa90_DesignPatterns.Behavioral.aa971_Strategy;
 
 public class OTPStrategy implements LoginStrategy{
     @Override
