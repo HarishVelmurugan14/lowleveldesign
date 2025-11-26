@@ -1,4 +1,4 @@
-package TicTacToe.models;
+package aa102_TicTacToe.models;
 
 public class Symbol
 {

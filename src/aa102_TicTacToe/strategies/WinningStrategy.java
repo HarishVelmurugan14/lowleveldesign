@@ -1,7 +1,7 @@
-package TicTacToe.strategies;
+package aa102_TicTacToe.strategies;
 
-import TicTacToe.models.Board;
-import TicTacToe.models.Move;
+import aa102_TicTacToe.models.Board;
+import aa102_TicTacToe.models.Move;
 
 public interface WinningStrategy
 {

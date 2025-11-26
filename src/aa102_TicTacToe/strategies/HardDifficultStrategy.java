@@ -1,8 +1,8 @@
-package TicTacToe.strategies;
+package aa102_TicTacToe.strategies;
 
-import TicTacToe.models.Board;
-import TicTacToe.models.Move;
-import TicTacToe.models.Player;
+import aa102_TicTacToe.models.Board;
+import aa102_TicTacToe.models.Move;
+import aa102_TicTacToe.models.Player;
 
 public class HardDifficultStrategy implements BotDifficultStrategy{
     @Override

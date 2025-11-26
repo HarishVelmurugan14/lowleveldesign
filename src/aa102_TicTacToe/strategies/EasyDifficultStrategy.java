@@ -1,6 +1,6 @@
-package TicTacToe.strategies;
+package aa102_TicTacToe.strategies;
 
-import TicTacToe.models.*;
+import aa102_TicTacToe.models.*;
 
 import java.util.List;
 

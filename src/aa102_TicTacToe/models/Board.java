@@ -1,4 +1,4 @@
-package TicTacToe.models;
+package aa102_TicTacToe.models;
 
 import java.util.ArrayList;
 import java.util.List;

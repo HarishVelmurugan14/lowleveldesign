@@ -1,10 +1,10 @@
-package TicTacToe.factories;
+package aa102_TicTacToe.factories;
 
-import TicTacToe.models.BotDifficultyLevel;
-import TicTacToe.strategies.BotDifficultStrategy;
-import TicTacToe.strategies.EasyDifficultStrategy;
-import TicTacToe.strategies.HardDifficultStrategy;
-import TicTacToe.strategies.MediumDifficultStrategy;
+import aa102_TicTacToe.models.BotDifficultyLevel;
+import aa102_TicTacToe.strategies.BotDifficultStrategy;
+import aa102_TicTacToe.strategies.EasyDifficultStrategy;
+import aa102_TicTacToe.strategies.HardDifficultStrategy;
+import aa102_TicTacToe.strategies.MediumDifficultStrategy;
 
 public class BotPlayingDifficultyStrategyFactory
 {

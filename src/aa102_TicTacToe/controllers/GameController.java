@@ -1,8 +1,8 @@
-package TicTacToe.controllers;
+package aa102_TicTacToe.controllers;
 
-import TicTacToe.models.*;
-import TicTacToe.strategies.RowWinningStrategy;
-import TicTacToe.strategies.WinningStrategy;
+import aa102_TicTacToe.models.*;
+import aa102_TicTacToe.strategies.RowWinningStrategy;
+import aa102_TicTacToe.strategies.WinningStrategy;
 
 import java.util.ArrayList;
 import java.util.List;

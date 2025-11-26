@@ -1,8 +1,8 @@
-package TicTacToe.models;
+package aa102_TicTacToe.models;
 
 
-import TicTacToe.factories.BotPlayingDifficultyStrategyFactory;
-import TicTacToe.strategies.BotDifficultStrategy;
+import aa102_TicTacToe.factories.BotPlayingDifficultyStrategyFactory;
+import aa102_TicTacToe.strategies.BotDifficultStrategy;
 
 public class Bot extends Player
 {

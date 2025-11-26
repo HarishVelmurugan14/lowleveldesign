@@ -1,8 +1,8 @@
-package TicTacToe.client;
+package aa102_TicTacToe.client;
 
-import TicTacToe.controllers.GameController;
-import TicTacToe.models.Game;
-import TicTacToe.models.GameState;
+import aa102_TicTacToe.controllers.GameController;
+import aa102_TicTacToe.models.Game;
+import aa102_TicTacToe.models.GameState;
 
 import java.util.Scanner;
 
