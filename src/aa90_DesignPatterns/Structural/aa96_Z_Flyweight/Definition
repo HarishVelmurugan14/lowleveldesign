@@ -1,0 +1,122 @@
+Flyweight Pattern – Using Given Variables
+-----------------------------------------
+
+# Intrinsic (shared) variables – 7 total
+# sound, color, material, shape, baseDamage, name, radius
+
+class BulletType {
+    String sound;
+    String color;
+    String material;
+    String shape;
+    int baseDamage;
+    int name;
+    int radius;
+
+    BulletType(String sound, String color, String material, String shape,
+               int baseDamage, int name, int radius) {
+
+        this.sound = sound;
+        this.color = color;
+        this.material = material;
+        this.shape = shape;
+        this.baseDamage = baseDamage;
+        this.name = name;
+        this.radius = radius;
+    }
+
+    void draw(int angle) {
+        System.out.println("Drawing bullet type: " + name +
+            " shape:" + shape + " sound:" + sound + " angle:" + angle);
+    }
+}
+
+# Extrinsic variables – 3 total
+# initialVelocity, finalVelocity, angle
+
+# Base Class
+abstract class Bullet {
+    int initialVelocity;
+    int finalVelocity;
+    int angle;
+    BulletType type;
+
+    Bullet(int initialVelocity, int finalVelocity, int angle, BulletType type) {
+        this.initialVelocity = initialVelocity;
+        this.finalVelocity = finalVelocity;
+        this.angle = angle;
+        this.type = type;
+    }
+
+    abstract void fire();
+}
+
+# Concrete Bullet
+class FlyingBullet extends Bullet {
+
+    FlyingBullet(int initialVelocity, int finalVelocity, int angle, BulletType type) {
+        super(initialVelocity, finalVelocity, angle, type);
+    }
+
+    void fire() {
+        System.out.println("Bullet fired: IV=" + initialVelocity +
+                " FV=" + finalVelocity + " Angle=" + angle);
+        type.draw(angle);
+    }
+}
+
+# Flyweight Factory
+import java.util.HashMap;
+
+class BulletFactory {
+    private static HashMap<String, BulletType> cache = new HashMap<>();
+
+    static BulletType getBulletType(String sound, String color, String material,
+                                    String shape, int baseDamage, int name, int radius) {
+
+        String key = sound + color + material + shape + baseDamage + name + radius;
+
+        if (!cache.containsKey(key)) {
+            cache.put(key, new BulletType(sound, color, material, shape,
+                    baseDamage, name, radius));
+        }
+
+        return cache.get(key);
+    }
+}
+
+# Client
+public class GameClient {
+    public static void main(String[] args) {
+
+        # Create shared bullet type (intrinsic)
+        BulletType sniperType = BulletFactory.getBulletType(
+                "sniper.wav",
+                "silver",
+                "steel",
+                "long",
+                90,
+                101,      # name
+                5         # radius
+        );
+
+        # Create bullets with extrinsic data
+        Bullet b1 = new FlyingBullet(100, 300, 30, sniperType);
+        Bullet b2 = new FlyingBullet(120, 350, 50, sniperType);
+        Bullet b3 = new FlyingBullet(90, 280, 70, sniperType);
+
+        b1.fire();
+        b2.fire();
+        b3.fire();
+    }
+}
+
+-----------------------------------------------------
+Problem Faced:
+- Without Flyweight, each bullet stores all variables (7 intrinsic + 3 extrinsic),
+  causing huge memory usage when thousands exist.
+
+Solution:
+- Store the 7 intrinsic variables ONCE inside BulletType.
+- Each bullet only stores 3 extrinsic variables.
+- Massive memory savings, faster game performance.
